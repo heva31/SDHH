@@ -84,7 +84,7 @@
             background-color: #0056b3;
         }
         
-        #map_53404a6ca317de0a9e50bf7261dc143b {
+        #map_56c3ae34930b1c10d27f08115d476a69 {
             position: relative;
             width: 100.0%;
             height: 100.0%;
@@ -98,7 +98,7 @@
 <body>
 
     <div class="container container-one">
-        <div class="folium-map" id="map_53404a6ca317de0a9e50bf7261dc143b" ></div>
+        <div class="folium-map" id="map_56c3ae34930b1c10d27f08115d476a69" ></div>
     </div>
 
     <div class="container container-two">
@@ -124,115 +124,118 @@
             .catch(error => console.error('Error:', error));
     }
 
-    var map_53404a6ca317de0a9e50bf7261dc143b = L.map(
-        "map_53404a6ca317de0a9e50bf7261dc143b",
-        {
-            center: [20.0, 0.0],
-            crs: L.CRS.EPSG3857,
-            ...{
-"zoom": 2,
-"zoomControl": true,
-"preferCanvas": false,
+    var map_56c3ae34930b1c10d27f08115d476a69 = L.map(
+                "map_56c3ae34930b1c10d27f08115d476a69",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
 }
 
-        }
-    );
-  var tile_layer_5f6fd9fd6920b983f9deb970c3508ee9 = L.tileLayer(
-        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-"minZoom": 0,
-"maxZoom": 19,
-"maxNativeZoom": 19,
-"noWrap": false,
-"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-"subdomains": "abc",
-"detectRetina": false,
-"tms": false,
-"opacity": 1,
-}
+                }
+            );
 
-    );
-
-
-    tile_layer_5f6fd9fd6920b983f9deb970c3508ee9.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
-
-
-
-function geo_json_5b0a79cd6e8d382cfee52c2f49811179_onEachFeature(feature, layer) {
-    layer.on({
-    });
-};
-var geo_json_5b0a79cd6e8d382cfee52c2f49811179 = L.geoJson(null, {
-        onEachFeature: geo_json_5b0a79cd6e8d382cfee52c2f49811179_onEachFeature,
-    
-    ...{
-}
-});
-
-function geo_json_5b0a79cd6e8d382cfee52c2f49811179_add (data) {
-    geo_json_5b0a79cd6e8d382cfee52c2f49811179
-        .addData(data);
-}
-    geo_json_5b0a79cd6e8d382cfee52c2f49811179_add({"features": [{"geometry": {"coordinates": [-122.4194, 37.7749], "type": "Point"}, "properties": {"name": "San Francisco"}, "type": "Feature"}, {"geometry": {"coordinates": [-0.1278, 51.5074], "type": "Point"}, "properties": {"name": "London"}, "type": "Feature"}, {"geometry": {"coordinates": [139.6917, 35.6895], "type": "Point"}, "properties": {"name": "Tokyo"}, "type": "Feature"}, {"geometry": {"coordinates": [-74.006, 40.7128], "type": "Point"}, "properties": {"name": "New York"}, "type": "Feature"}], "type": "FeatureCollection"});
-geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature) {return feature.properties.style;});
-
-
-
-    geo_json_5b0a79cd6e8d382cfee52c2f49811179.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
-
-
-    var geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl = new L.Control.Search({
-        layer: geo_json_5b0a79cd6e8d382cfee52c2f49811179,
-        
-        propertyName: 'name',
-        
-        collapsed: false,
-        textPlaceholder: 'Search for a city',
-        position:'topleft',
-    
-        initial: false,
-        
-        hideMarkerOnCollapse: true
-    
-        });
-        geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl.on('search:locationfound', function(e) {
-            geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature){
-                return feature.properties.style
-            })
             
-            if(e.layer._popup)
-                e.layer.openPopup();
-        })
-        geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl.on('search:collapsed', function(e) {
-                geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature){
-                    return feature.properties.style
-            });
-        });
-    map_53404a6ca317de0a9e50bf7261dc143b.addControl( geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl );
 
-
-
-    var feature_group_f990459fa3f56bb394322f8e6cf6ecc8 = L.featureGroup(
-        {
-}
-    );
-
-
-    feature_group_f990459fa3f56bb394322f8e6cf6ecc8.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
-
-
-        var lat_lng_popup_d5fb2b21af518c1d7c957b54dd45b77f = L.popup();
-        function latLngPop(e) {
-            selectedLat = e.latlng.lat.toFixed(4);  // Store latitude
-            selectedLng = e.latlng.lng.toFixed(4);  // Store longitude
-
-            lat_lng_popup_d5fb2b21af518c1d7c957b54dd45b77f
-                .setLatLng(e.latlng)
-                .setContent("Latitude: " + selectedLat + "<br>Longitude: " + selectedLng)
-                .openOn(map_53404a6ca317de0a9e50bf7261dc143b);
-
-            }
-        map_53404a6ca317de0a9e50bf7261dc143b.on('click', latLngPop);
+        
     
+            var tile_layer_be00bb5f1b3a9f264c5a17eeecb6869f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_be00bb5f1b3a9f264c5a17eeecb6869f.addTo(map_56c3ae34930b1c10d27f08115d476a69);
+        
+    
+
+        function geo_json_ad6590c183e5d10f391ba0633c2f7489_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ad6590c183e5d10f391ba0633c2f7489 = L.geoJson(null, {
+                onEachFeature: geo_json_ad6590c183e5d10f391ba0633c2f7489_onEachFeature,
+            
+            ...{
+}
+        });
+
+        function geo_json_ad6590c183e5d10f391ba0633c2f7489_add (data) {
+            geo_json_ad6590c183e5d10f391ba0633c2f7489
+                .addData(data);
+        }
+            geo_json_ad6590c183e5d10f391ba0633c2f7489_add({"features": [{"geometry": {"coordinates": [-122.4194, 37.7749], "type": "Point"}, "properties": {"name": "San Francisco"}, "type": "Feature"}, {"geometry": {"coordinates": [-0.1278, 51.5074], "type": "Point"}, "properties": {"name": "London"}, "type": "Feature"}, {"geometry": {"coordinates": [139.6917, 35.6895], "type": "Point"}, "properties": {"name": "Tokyo"}, "type": "Feature"}, {"geometry": {"coordinates": [-74.006, 40.7128], "type": "Point"}, "properties": {"name": "New York"}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_ad6590c183e5d10f391ba0633c2f7489.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_ad6590c183e5d10f391ba0633c2f7489.addTo(map_56c3ae34930b1c10d27f08115d476a69);
+        
+    
+            var geo_json_ad6590c183e5d10f391ba0633c2f7489searchControl = new L.Control.Search({
+                layer: geo_json_ad6590c183e5d10f391ba0633c2f7489,
+                
+                propertyName: 'name',
+                
+                collapsed: false,
+                textPlaceholder: 'Search for a city',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_ad6590c183e5d10f391ba0633c2f7489searchControl.on('search:locationfound', function(e) {
+                    geo_json_ad6590c183e5d10f391ba0633c2f7489.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_ad6590c183e5d10f391ba0633c2f7489searchControl.on('search:collapsed', function(e) {
+                        geo_json_ad6590c183e5d10f391ba0633c2f7489.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_56c3ae34930b1c10d27f08115d476a69.addControl( geo_json_ad6590c183e5d10f391ba0633c2f7489searchControl );
+
+        
+    
+            var feature_group_5c77ff762a00bd045a737fe192b90c8c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_5c77ff762a00bd045a737fe192b90c8c.addTo(map_56c3ae34930b1c10d27f08115d476a69);
+        
+    
+                var lat_lng_popup_23c27b4927a7dbfe5184f57aff0dee72 = L.popup();
+                function latLngPop(e) {
+                    selectedLat = e.latlng.lat.toFixed(4);  // Store latitude
+                    selectedLng = e.latlng.lng.toFixed(4);  // Store longitude
+                    lat_lng_popup_23c27b4927a7dbfe5184f57aff0dee72
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_56c3ae34930b1c10d27f08115d476a69);
+                    }
+                map_56c3ae34930b1c10d27f08115d476a69.on('click', latLngPop);
 </script>
 </html>
