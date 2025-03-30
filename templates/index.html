@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <title>Two Containers Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            /* position: fixed; */
+            max-width: 75%;
+            margin: 20px auto;  /* Center the containers and add vertical space */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+
+        .container-one {
+            /* background-color: #ffefc3;  Light yellow background */
+            border: 2px solid #ffd56b;
+            /* position: fixed; */
+            /* border: 2px solid transparent; */
+            width: 75.0%;
+            height: 50.0%;
+            z-index: 0;
+        }
+
+        .container-two {
+            /* position: fixed; */
+            background-color: #c3eaff;  /* Light blue background */
+            border: 2px solid #6bc7ff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #map_53404a6ca317de0a9e50bf7261dc143b {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+            z-index: 0;
+        }
+        .leaflet-container { font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container container-one">
+        <div class="folium-map" id="map_53404a6ca317de0a9e50bf7261dc143b" ></div>
+    </div>
+
+    <div class="container container-two">
+        <h2>Run Selenium Task</h2>
+        <p>Click the button below to trigger the Selenium script running on Flask.</p>
+        <button onclick="runSelenium()">Run Selenium</button>
+    </div>
+
+</body>
+<script>
+    let selectedLat = null;
+    let selectedLng = null;
+
+    function runSelenium() {
+        if (selectedLat === null || selectedLng === null) {
+            alert("Please click on the map first to select a location.");
+            return;
+        }
+
+        fetch(`/run_selenium?lat=${selectedLat}&lng=${selectedLng}`, { method: 'GET' })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    var map_53404a6ca317de0a9e50bf7261dc143b = L.map(
+        "map_53404a6ca317de0a9e50bf7261dc143b",
+        {
+            center: [20.0, 0.0],
+            crs: L.CRS.EPSG3857,
+            ...{
+"zoom": 2,
+"zoomControl": true,
+"preferCanvas": false,
+}
+
+        }
+    );
+  var tile_layer_5f6fd9fd6920b983f9deb970c3508ee9 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+"minZoom": 0,
+"maxZoom": 19,
+"maxNativeZoom": 19,
+"noWrap": false,
+"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+"subdomains": "abc",
+"detectRetina": false,
+"tms": false,
+"opacity": 1,
+}
+
+    );
+
+
+    tile_layer_5f6fd9fd6920b983f9deb970c3508ee9.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
+
+
+
+function geo_json_5b0a79cd6e8d382cfee52c2f49811179_onEachFeature(feature, layer) {
+    layer.on({
+    });
+};
+var geo_json_5b0a79cd6e8d382cfee52c2f49811179 = L.geoJson(null, {
+        onEachFeature: geo_json_5b0a79cd6e8d382cfee52c2f49811179_onEachFeature,
+    
+    ...{
+}
+});
+
+function geo_json_5b0a79cd6e8d382cfee52c2f49811179_add (data) {
+    geo_json_5b0a79cd6e8d382cfee52c2f49811179
+        .addData(data);
+}
+    geo_json_5b0a79cd6e8d382cfee52c2f49811179_add({"features": [{"geometry": {"coordinates": [-122.4194, 37.7749], "type": "Point"}, "properties": {"name": "San Francisco"}, "type": "Feature"}, {"geometry": {"coordinates": [-0.1278, 51.5074], "type": "Point"}, "properties": {"name": "London"}, "type": "Feature"}, {"geometry": {"coordinates": [139.6917, 35.6895], "type": "Point"}, "properties": {"name": "Tokyo"}, "type": "Feature"}, {"geometry": {"coordinates": [-74.006, 40.7128], "type": "Point"}, "properties": {"name": "New York"}, "type": "Feature"}], "type": "FeatureCollection"});
+geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature) {return feature.properties.style;});
+
+
+
+    geo_json_5b0a79cd6e8d382cfee52c2f49811179.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
+
+
+    var geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl = new L.Control.Search({
+        layer: geo_json_5b0a79cd6e8d382cfee52c2f49811179,
+        
+        propertyName: 'name',
+        
+        collapsed: false,
+        textPlaceholder: 'Search for a city',
+        position:'topleft',
+    
+        initial: false,
+        
+        hideMarkerOnCollapse: true
+    
+        });
+        geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl.on('search:locationfound', function(e) {
+            geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature){
+                return feature.properties.style
+            })
+            
+            if(e.layer._popup)
+                e.layer.openPopup();
+        })
+        geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl.on('search:collapsed', function(e) {
+                geo_json_5b0a79cd6e8d382cfee52c2f49811179.setStyle(function(feature){
+                    return feature.properties.style
+            });
+        });
+    map_53404a6ca317de0a9e50bf7261dc143b.addControl( geo_json_5b0a79cd6e8d382cfee52c2f49811179searchControl );
+
+
+
+    var feature_group_f990459fa3f56bb394322f8e6cf6ecc8 = L.featureGroup(
+        {
+}
+    );
+
+
+    feature_group_f990459fa3f56bb394322f8e6cf6ecc8.addTo(map_53404a6ca317de0a9e50bf7261dc143b);
+
+
+        var lat_lng_popup_d5fb2b21af518c1d7c957b54dd45b77f = L.popup();
+        function latLngPop(e) {
+            selectedLat = e.latlng.lat.toFixed(4);  // Store latitude
+            selectedLng = e.latlng.lng.toFixed(4);  // Store longitude
+
+            lat_lng_popup_d5fb2b21af518c1d7c957b54dd45b77f
+                .setLatLng(e.latlng)
+                .setContent("Latitude: " + selectedLat + "<br>Longitude: " + selectedLng)
+                .openOn(map_53404a6ca317de0a9e50bf7261dc143b);
+
+            }
+        map_53404a6ca317de0a9e50bf7261dc143b.on('click', latLngPop);
+    
+</script>
+</html>

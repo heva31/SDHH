@@ -1,0 +1,185 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Login Page style */
+.background-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-container-login {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 3.3rem;
+    margin-bottom: 3.3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    background: linear-gradient(to right, white 60%, #cce3f5 40%);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.login-form h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-form h5 {
+    text-align: center;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.btn-success {
+    background-color: #1e90ff;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #007bff;
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 3px black;
+}
+
+.social-icons a:hover {
+    box-shadow: 0px 0px 3px black;
+    border: 1.5px solid black;
+}
+
+.social-icons a:active {
+    transform: scale(.95);
+}
+
+.social-icons a img {
+    height: 30px;
+    width: 30px;
+}
+
+.social-icons a div {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
+}
+
+.signup {
+    color: #ff69b4;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.login-image {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.login-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-left: -90px;
+}
+
+.cactus-image {
+    height: 300px;
+    margin-right: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .social-icons a div {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 385px) {
+    .social-icons a div {
+        font-size: .9rem;
+    }
+}
+
