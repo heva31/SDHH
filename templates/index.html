@@ -97,6 +97,17 @@
 </head>
 <body>
 
+    {% if user %}
+    <div class="user-profile">
+        <img src="{{ user['picture'] }}" alt="Profile Image">
+        <span>{{ user['name'] }}</span>
+    </div>
+    {% endif %}
+
+    {% if user %}
+    <button style="text-decoration: none;"><a href="/logout">Log Out</a></button>
+    {% endif %}
+
     <div class="container container-one">
         <div class="folium-map" id="map_56c3ae34930b1c10d27f08115d476a69" ></div>
     </div>
